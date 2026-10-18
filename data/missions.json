@@ -1,0 +1,300 @@
+{
+  "info": "Every mission follows: Explore → Story → Decision → Consequence → Reflection → Reward. Steps run in order unless a choice or step has \"next\".",
+  "reflectionReasons": [
+    "I thought about their feelings.",
+    "I wanted to be fair and polite.",
+    "I wanted to help.",
+    "It felt like the easiest choice.",
+    "I'm not sure."
+  ],
+  "missions": [
+    {
+      "id": "m1",
+      "order": 1,
+      "title": "The Locked Garden",
+      "character": "mary",
+      "location": "oldTree",
+      "values": ["Curiosity", "Understanding"],
+      "summary": "Mary Lennox arrives at Misselthwaite Manor, lonely and cross. A robin leads her to a buried key, and she learns that the garden was locked out of sadness.",
+      "stageText": "Fresh grass returns to the garden.",
+      "nextMission": "m2",
+      "steps": [
+        { "type": "explore", "focus": "oldTree", "text": "Misselthwaite Manor, Yorkshire. Mary Lennox has just arrived from India. The house has a hundred rooms, and most of them are locked. Outside, the wind blows across the moor." },
+        { "type": "dialog", "speaker": "mary", "emotion": "sad", "text": "Nobody here plays with me. Everyone just tells me to keep out of the way." },
+        { "type": "narration", "text": "Martha, the young housemaid, tells Mary a secret: one garden has been locked for ten years. When Mrs. Craven died, Mr. Craven locked the door and buried the key." },
+        { "type": "dialog", "speaker": "ben", "emotion": "angry", "text": "Hmph. Children shouldn't go poking about. That garden's none of your business." },
+        {
+          "type": "decision", "id": "m1_d1", "speaker": "mary", "emotion": "thinking",
+          "prompt": "Ben Weatherstaff, the old gardener, looks grumpy. Mary really wants to know about the garden. What should she do?",
+          "options": [
+            { "id": "a", "text": "Demand: “Tell me where the door is!”", "scores": {}, "feedback": "Think about how Ben might feel. The garden holds a sad memory for him.", "reaction": { "speaker": "ben", "emotion": "angry", "text": "I'll tell thee nothing. Off with you!" } },
+            { "id": "b", "text": "Ask Ben about the little robin he is talking to.", "scores": { "respect": 1, "kindness": 1, "understanding": 1 }, "feedback": "Starting with what Ben loves showed respect and kindness.", "reaction": { "speaker": "ben", "emotion": "happy", "text": "That robin? He's my only friend, he is. Lonely, like me." } },
+            { "id": "c", "text": "Gently ask him why the garden was locked, and listen.", "scores": { "understanding": 2, "respect": 1 }, "feedback": "This choice showed understanding.", "reaction": { "speaker": "ben", "emotion": "sad", "text": "She loved that garden, the mistress did. It's been shut up ever since." } },
+            { "id": "d", "text": "Give up and go back inside alone.", "scores": {}, "feedback": "Sometimes a gentle question can open a door. What could Mary ask?", "reaction": { "speaker": "mary", "emotion": "sad", "text": "…Nobody ever tells me anything." } }
+          ]
+        },
+        { "type": "thenNow", "book": "Mary arrives in a strange new house. Nobody talks to her, and she feels lonely and cross.", "today": "A new student joins your class in the middle of the year and eats lunch alone." },
+        { "type": "minigame", "game": "findKey", "text": "The robin hops along the old wall and scratches at the soil. Help Mary find what is hidden near the Old Tree." },
+        { "type": "narration", "text": "Under the robin's feet, Mary finds an old rusty key! Later, the wind lifts the ivy on the wall and shows a hidden door." },
+        {
+          "type": "decision", "id": "m1_d2", "speaker": "mary", "emotion": "thinking", "reflection": "choice",
+          "prompt": "Martha says Mr. Craven still can't bear to think about the garden. What does Mary think about him?",
+          "options": [
+            { "id": "a", "text": "“He's just a mean, unfriendly man.”", "scores": {}, "feedback": "Think about why someone might lock away something they once loved.", "reaction": { "speaker": "martha", "emotion": "sad", "text": "He's not mean, Miss. He's just very, very sad." } },
+            { "id": "b", "text": "“The garden holds sad memories. I should be gentle with it.”", "scores": { "understanding": 2, "compassion": 1 }, "feedback": "This choice showed understanding.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "Eh, that's a kind way to think, Miss Mary." } },
+            { "id": "c", "text": "“I'll look after the garden, so something good can grow from the sadness.”", "scores": { "caring": 1, "compassion": 2 }, "feedback": "Wanting to turn sadness into something good showed compassion.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "Mother says a garden is good medicine for a sad heart." } },
+            { "id": "d", "text": "“His feelings don't matter. I found the key.”", "scores": {}, "feedback": "How might Mr. Craven feel if he knew? Try to see it from his side.", "reaction": { "speaker": "martha", "emotion": "worried", "text": "Oh, Miss… please be careful." } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "order": 2,
+      "title": "Mary's Choice",
+      "character": "mary",
+      "location": "roseGarden",
+      "values": ["Respect", "Kindness"],
+      "summary": "Mary learns that the way she speaks to Martha matters. Kindness from Martha's family softens her, and she chooses whether to share her secret garden.",
+      "stageText": "The first flowers open in the garden.",
+      "nextMission": "m3",
+      "steps": [
+        { "type": "explore", "focus": "roseGarden", "text": "The rose garden is grey and tangled. Mary remembers her first morning at the manor, when Martha opened the curtains and started chatting in her strong Yorkshire voice." },
+        { "type": "dialog", "speaker": "martha", "emotion": "happy", "text": "Good mornin', Miss! Look at that moor out there. Isn't it grand? Eat your porridge, now." },
+        { "type": "narration", "text": "In India, Mary's servants never spoke to her like that. Mary feels cross and confused. This is a branching story — each choice changes what happens next." },
+        {
+          "type": "decision", "id": "m2_d1", "speaker": "mary", "emotion": "angry",
+          "prompt": "What Should Mary Do? Martha is friendly, but Mary is used to giving orders.",
+          "options": [
+            { "id": "a", "text": "Order Martha to be quiet and leave.", "scores": {}, "feedback": "How do you think Martha felt? Watch what happens next.", "reaction": { "speaker": "martha", "emotion": "sad", "text": "Eh… I'm sorry, Miss. I only wanted to be friendly." }, "next": "m2_cold" },
+            { "id": "b", "text": "Ask Martha about her family on the moor.", "scores": { "understanding": 2, "kindness": 1 }, "feedback": "Showing interest in Martha's life showed understanding.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "There's twelve of us at home! Our Dickon can charm any animal on the moor." }, "next": "m2_warm" },
+            { "id": "c", "text": "Say thank you for the breakfast.", "scores": { "respect": 2, "kindness": 1 }, "feedback": "A simple thank-you showed respect.", "reaction": { "speaker": "martha", "emotion": "surprised", "text": "Well! You're welcome, Miss. My, that's nice to hear." }, "next": "m2_warm" }
+          ]
+        },
+        { "type": "narration", "id": "m2_cold", "text": "Martha's smile fades. Mary feels a strange, uncomfortable feeling inside. It is the first time she has wondered how someone else feels." },
+        {
+          "type": "decision", "id": "m2_d2a", "speaker": "mary", "emotion": "worried",
+          "prompt": "Martha is quietly folding the blankets. What should Mary do now?",
+          "options": [
+            { "id": "a", "text": "Say sorry to Martha.", "scores": { "respect": 2, "compassion": 1 }, "feedback": "Saying sorry showed respect. It is never too late to change your words.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "Bless you, Miss. That's all right, then." } },
+            { "id": "b", "text": "Pretend nothing happened.", "scores": {}, "feedback": "Think about how Martha might feel if nobody mentions it.", "reaction": { "speaker": "martha", "emotion": "sad", "text": "…I'll be going, then, Miss." } },
+            { "id": "c", "text": "Ask Martha to tell her about the moor.", "scores": { "understanding": 1, "kindness": 1 }, "feedback": "Starting a friendly conversation is a kind way to repair things.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "Oh, the moor's lovely in spring, Miss! All gorse and heather." } }
+          ],
+          "next": "m2_rose"
+        },
+        { "type": "narration", "id": "m2_warm", "text": "Martha's mother sends Mary a skipping rope. She bought it with her own small savings, even though the family is poor." },
+        {
+          "type": "decision", "id": "m2_d2b", "speaker": "mary", "emotion": "surprised",
+          "prompt": "Mary has never received a present like this before. How should she respond?",
+          "options": [
+            { "id": "a", "text": "Say it's a cheap toy.", "scores": {}, "feedback": "Think about what this gift cost Martha's family.", "reaction": { "speaker": "martha", "emotion": "sad", "text": "Mother did her best, Miss." } },
+            { "id": "b", "text": "Thank Martha and her mother warmly.", "scores": { "kindness": 2, "respect": 1 }, "feedback": "This choice showed kindness.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "Mother'll be that pleased, Miss!" } },
+            { "id": "c", "text": "Ask how she could do something kind for them in return.", "scores": { "kindness": 1, "caring": 1, "compassion": 1 }, "feedback": "Wanting to give back showed caring.", "reaction": { "speaker": "martha", "emotion": "happy", "text": "You could come and meet Dickon one day. He'd like that." } }
+          ],
+          "next": "m2_rose"
+        },
+        { "type": "narration", "id": "m2_rose", "text": "Weeks later, Mary stands in the secret garden. The roses look dead. She wants to keep the garden secret forever — but Dickon knows how to make things grow." },
+        {
+          "type": "decision", "id": "m2_d3", "speaker": "mary", "emotion": "thinking", "reflection": "choice",
+          "prompt": "Should Mary share her secret garden with Dickon?",
+          "options": [
+            { "id": "a", "text": "Keep it to herself. It's hers alone.", "scores": {}, "feedback": "Could the garden — and Mary — grow more with a friend?", "reaction": { "speaker": "mary", "emotion": "sad", "text": "The roses still look so grey…" } },
+            { "id": "b", "text": "Trust Dickon, and ask him to promise to keep it secret.", "scores": { "respect": 2, "understanding": 1 }, "feedback": "Trusting someone while respecting a promise showed respect.", "reaction": { "speaker": "dickon", "emotion": "happy", "text": "I can keep secrets, Miss. I keep 'em for the birds' nests on the moor." } },
+            { "id": "c", "text": "Share it, because the roses need care and help.", "scores": { "caring": 1, "kindness": 1, "compassion": 1 }, "feedback": "Thinking about what the garden needs showed caring.", "reaction": { "speaker": "dickon", "emotion": "happy", "text": "Eh, Miss! Look — there's green inside this stem. It's wick!" } }
+          ]
+        },
+        { "type": "thenNow", "book": "Mary speaks rudely to Martha because she is used to giving orders.", "today": "Someone is rude to a cafeteria worker, a cleaner or a bus driver." }
+      ]
+    },
+    {
+      "id": "m3",
+      "order": 3,
+      "title": "Help Colin",
+      "character": "colin",
+      "location": "colinsWindow",
+      "values": ["Understanding", "Caring"],
+      "demo": true,
+      "summary": "Mary follows the sound of crying and finds Colin, a lonely boy who believes he will never get well. She learns to listen to him — and to be honest with him.",
+      "stageText": "The trees begin to grow new leaves.",
+      "nextMission": "m4",
+      "steps": [
+        { "type": "explore", "focus": "colinsWindow", "text": "One stormy night, Mary hears crying somewhere in the house. She follows the sound down a long corridor, past dark portraits, to a door hidden behind a tapestry." },
+        { "type": "narration", "text": "Inside, a thin boy lies in a huge bed. He is Colin Craven, Mr. Craven's son. He has hardly ever been outside, and he believes he will never walk." },
+        {
+          "type": "minigame", "game": "emotionMatch",
+          "text": "Emotion Match: look at Colin's face, how he moves and what he says. How is he feeling?",
+          "emotions": ["lonely", "worried", "hopeful", "angry", "happy", "excluded"],
+          "rounds": [
+            { "speaker": "colin", "emotion": "sad", "posture": "Lies in bed and turns his face to the wall.", "phrase": "Nobody ever comes to see me.", "answer": ["lonely", "excluded"] },
+            { "speaker": "colin", "emotion": "angry", "posture": "Clenches his fists and shouts at the nurse.", "phrase": "Go away! I'll get a lump on my back and die!", "answer": ["angry", "worried"] },
+            { "speaker": "colin", "emotion": "hopeful", "posture": "Sits up. His eyes are bright.", "phrase": "Could I really see the garden one day?", "answer": ["hopeful"] }
+          ]
+        },
+        { "type": "dialog", "speaker": "colin", "emotion": "sad", "text": "I don't think anyone understands how I feel." },
+        {
+          "type": "decision", "id": "m3_d1", "speaker": "colin", "emotion": "sad", "reflection": "text",
+          "prompt": "Colin looks away. How should Mary answer him?",
+          "options": [
+            { "id": "a", "text": "“You should stop thinking like that.”", "scores": {}, "feedback": "Think about how Colin might feel in this situation.", "reaction": { "speaker": "colin", "emotion": "angry", "text": "That's what everyone says. Nobody listens!" } },
+            { "id": "b", "text": "“I want to understand. Tell me what happened.”", "scores": { "understanding": 2, "caring": 1, "respect": 1 }, "feedback": "This choice showed understanding.", "reaction": { "speaker": "colin", "emotion": "surprised", "text": "Nobody ever asked me that before… Everyone thinks I'll die. Even Father can't bear to look at me." } },
+            { "id": "c", "text": "“Maybe you just need to be alone.”", "scores": {}, "feedback": "Colin is alone almost all the time. What might he need instead?", "reaction": { "speaker": "colin", "emotion": "sad", "text": "I'm always alone." } },
+            { "id": "d", "text": "“Let's talk about something else.”", "scores": { "kindness": 1 }, "feedback": "Changing the subject can be kind, but Colin may feel unheard.", "reaction": { "speaker": "colin", "emotion": "worried", "text": "…All right. What about?" } }
+          ]
+        },
+        { "type": "narration", "text": "A few days later, Colin has a terrible tantrum. He screams that he can feel a lump on his back. The nurse and servants are too frightened to go in." },
+        {
+          "type": "decision", "id": "m3_d2", "speaker": "colin", "emotion": "angry",
+          "prompt": "Colin is screaming and scared. What should Mary do?",
+          "options": [
+            { "id": "a", "text": "Calmly but firmly offer to look at his back to show him the truth.", "scores": { "caring": 2, "understanding": 1 }, "feedback": "Helping Colin face his fear with the truth showed caring.", "reaction": { "speaker": "colin", "emotion": "surprised", "text": "There's… no lump? Truly? Not even a tiny one?" } },
+            { "id": "b", "text": "Run away and leave him alone.", "scores": {}, "feedback": "Colin is frightened. What could help him feel safe?", "reaction": { "speaker": "colin", "emotion": "sad", "text": "…Everyone always goes away." } },
+            { "id": "c", "text": "Tell the nurse he is impossible.", "scores": {}, "feedback": "Think about what Colin is really afraid of.", "reaction": { "speaker": "colin", "emotion": "angry", "text": "I hate everyone!" } },
+            { "id": "d", "text": "Sit with him and tell him about the garden until he calms down.", "scores": { "caring": 1, "kindness": 1, "compassion": 2 }, "feedback": "Staying with Colin and calming him showed compassion.", "reaction": { "speaker": "colin", "emotion": "hopeful", "text": "Tell me more about the roses. Are they really waking up?" } }
+          ]
+        },
+        { "type": "thenNow", "book": "Colin is shut away in his room and feels that nobody understands him.", "today": "A student is left out of an online group and stops talking at school." }
+      ]
+    },
+    {
+      "id": "m4",
+      "order": 4,
+      "title": "Dickon's Garden",
+      "character": "dickon",
+      "location": "hiddenBench",
+      "values": ["Cooperation", "Compassion"],
+      "summary": "Dickon brings the garden back to life with patience and gentle hands. Together, the children plan how Colin can come to the garden — and stand up for him.",
+      "stageText": "Birds return to the garden!",
+      "nextMission": "m5",
+      "steps": [
+        { "type": "explore", "focus": "hiddenBench", "text": "Dickon Sowerby comes from the moor with a little fox, a crow and two squirrels. Animals trust him because he is always gentle and calm." },
+        { "type": "dialog", "speaker": "dickon", "emotion": "happy", "text": "We'll need to clear the old path, Miss Mary, so Master Colin's chair can get through. Will tha' help me?" },
+        {
+          "type": "minigame", "game": "restorePath",
+          "text": "Restore the Path: put the five value stones in order, from the foundation (1) to the top (5).",
+          "stones": ["respect", "understanding", "kindness", "caring", "compassion"],
+          "hints": ["The foundation: treat others well", "Try to see their side", "Choose a good action", "Offer help and support", "Feel with them — and act"]
+        },
+        { "type": "dialog", "speaker": "dickon", "emotion": "worried", "text": "Master Colin wants to come to th' garden. But he's afraid people will stare at him." },
+        {
+          "type": "decision", "id": "m4_d1", "speaker": "dickon", "emotion": "thinking",
+          "prompt": "How should Mary and Dickon help Colin come to the garden?",
+          "options": [
+            { "id": "a", "text": "Take him out quickly, even though he says he isn't ready.", "scores": { "caring": 1 }, "feedback": "Wanting to help is good — but how might Colin feel if he isn't ready?", "reaction": { "speaker": "colin", "emotion": "worried", "text": "Wait! Not yet — I'm not ready!" } },
+            { "id": "b", "text": "Plan it together with Colin, and let him choose the day.", "scores": { "respect": 2, "caring": 1, "compassion": 1 }, "feedback": "Letting Colin choose showed respect.", "reaction": { "speaker": "colin", "emotion": "hopeful", "text": "Tomorrow. Let's go tomorrow, when the sun is out." } },
+            { "id": "c", "text": "Invite everyone in the house to watch his first trip.", "scores": {}, "feedback": "Colin is afraid of being stared at. How might a crowd feel to him?", "reaction": { "speaker": "colin", "emotion": "angry", "text": "No! I won't have them staring at me!" } },
+            { "id": "d", "text": "Ask the gardeners to stay away, so he feels safe.", "scores": { "understanding": 1, "compassion": 2 }, "feedback": "Thinking about what makes Colin feel safe showed compassion.", "reaction": { "speaker": "colin", "emotion": "happy", "text": "Just us three? Then it will be our secret." } }
+          ]
+        },
+        { "type": "narration", "text": "Dickon pushes Colin's chair through the hidden door. Colin sees the green buds, the birds and the sky. For the first time in years, he laughs out loud." },
+        {
+          "type": "decision", "id": "m4_d2", "speaker": "colin", "emotion": "sad", "reflection": "choice",
+          "prompt": "Old Ben Weatherstaff looks over the wall and says Colin has “crooked legs”. Colin is hurt. What should Dickon do?",
+          "options": [
+            { "id": "a", "text": "Laugh along with Ben.", "scores": {}, "feedback": "How do you think Colin felt in that moment?", "reaction": { "speaker": "colin", "emotion": "sad", "text": "…Even here, people laugh at me." } },
+            { "id": "b", "text": "Stand next to Colin and tell Ben that Colin is getting stronger.", "scores": { "compassion": 2, "caring": 1, "respect": 1 }, "feedback": "Standing up for Colin showed compassion.", "reaction": { "speaker": "colin", "emotion": "happy", "text": "I'm going to stand! Look, Ben — I'm standing!" } },
+            { "id": "c", "text": "Invite Ben to come in and see Colin for himself.", "scores": { "understanding": 1, "kindness": 1 }, "feedback": "Helping Ben see the truth was kind and wise.", "reaction": { "speaker": "ben", "emotion": "surprised", "text": "Well I never… the lad's as straight as I am!" } },
+            { "id": "d", "text": "Tell Colin to just ignore it.", "scores": {}, "feedback": "Ignoring hurtful words is hard alone. What could a friend do?", "reaction": { "speaker": "colin", "emotion": "sad", "text": "It's easy for you to say." } }
+          ]
+        },
+        { "type": "thenNow", "book": "Dickon and Mary plan carefully so that Colin can enjoy the garden safely.", "today": "A class plans a trip so that a student with a disability can join every activity." }
+      ]
+    },
+    {
+      "id": "m5",
+      "order": 5,
+      "title": "The Digital Garden",
+      "character": "mary",
+      "location": "digitalPortal",
+      "values": ["Digital Empathy"],
+      "digital": true,
+      "summary": "The garden turns into a digital garden. In group chats and comments, the same choices appear: to ignore, to join in, or to care.",
+      "stageText": "The whole garden is restored!",
+      "nextMission": null,
+      "steps": [
+        { "type": "narration", "text": "Colin was hidden away and felt nobody understood him. Today, people can feel the same way online. Welcome to the Digital Garden." },
+        {
+          "type": "chat", "id": "d1", "demo": true,
+          "app": "Group chat", "title": "Class 8B 🎒", "members": "24 members",
+          "messages": [
+            { "from": "Aru", "text": "who added Timur here lol" },
+            { "from": "Dana", "text": "he's so boring 🙄 let's remove him" },
+            { "system": "Dana removed Timur from the group" },
+            { "from": "Aru", "text": "😂😂" }
+          ],
+          "prompt": "Your classmate is removed from the group chat. What would you do?",
+          "options": [
+            { "id": "a", "text": "Ignore it.", "scores": {}, "feedback": "Think about how Timur might feel when he sees he was removed.", "result": [{ "system": "Nobody says anything. Timur is still outside the group." }] },
+            { "id": "b", "text": "Add another joke: “bye Timur 👋”", "scores": {}, "feedback": "Jokes can hurt more online, because everyone sees them. How would Timur feel?", "result": [{ "from": "me", "text": "bye Timur 👋" }, { "from": "Aru", "text": "😂" }] },
+            { "id": "c", "text": "Privately ask Timur if he's okay.", "scores": { "caring": 2, "understanding": 1, "kindness": 1 }, "feedback": "Checking on Timur privately showed caring.", "result": [{ "from": "me", "text": "(to Timur) hey, saw what happened. are you okay?", "private": true }, { "from": "Timur", "text": "thanks… I thought nobody cared", "private": true }] },
+            { "id": "d", "text": "Ask others to stop, and add Timur back.", "scores": { "respect": 1, "compassion": 2, "caring": 1 }, "feedback": "Standing up for Timur in front of everyone showed compassion.", "result": [{ "from": "me", "text": "that's not fair. he's in our class too" }, { "system": "You added Timur to the group" }, { "from": "Timur", "text": "thanks 🙂" }] }
+          ]
+        },
+        {
+          "type": "chat", "id": "d2",
+          "app": "Class chat", "title": "PE Class Memes", "members": "31 members",
+          "messages": [
+            { "from": "Nurik", "text": "📷 [photo of Aliya falling in PE]" },
+            { "from": "Nurik", "text": "LMAOOO look at her 😂😂😂" },
+            { "from": "Sabina", "text": "omg 💀" }
+          ],
+          "prompt": "Someone posts an embarrassing photo without permission. What would you do?",
+          "options": [
+            { "id": "a", "text": "React with 😂", "scores": {}, "feedback": "Every reaction makes the post bigger. How might Aliya feel?", "result": [{ "system": "Your reaction was added. 12 people reacted." }] },
+            { "id": "b", "text": "Forward it to another chat.", "scores": {}, "feedback": "Sharing a photo without permission can hurt someone a lot.", "result": [{ "system": "The photo was shared to 1 more chat." }] },
+            { "id": "c", "text": "Tell Nurik privately to delete it — it wasn't okay.", "scores": { "respect": 2, "compassion": 1 }, "feedback": "Protecting Aliya's privacy showed respect.", "result": [{ "from": "me", "text": "(to Nurik) pls delete it, she didn't agree to that", "private": true }, { "system": "Nurik deleted a message" }] },
+            { "id": "d", "text": "Message Aliya, ask how she feels and offer to help report it.", "scores": { "caring": 2, "understanding": 1, "compassion": 1 }, "feedback": "Supporting Aliya directly showed caring.", "result": [{ "from": "me", "text": "(to Aliya) hey, I saw the photo. are you ok? want me to help report it?", "private": true }, { "from": "Aliya", "text": "yes please… thank you", "private": true }] }
+          ]
+        },
+        {
+          "type": "chat", "id": "d3",
+          "app": "Comments", "title": "Dias posted a drawing 🎨", "members": "Public post",
+          "messages": [
+            { "from": "Dias", "text": "my first digital drawing! 🌳" },
+            { "from": "user_x", "text": "ugly lol" },
+            { "from": "kz_gamer", "text": "my 5 year old brother draws better 💀" }
+          ],
+          "prompt": "A student receives rude comments. What would you do?",
+          "options": [
+            { "id": "a", "text": "Like the rude comment.", "scores": {}, "feedback": "Likes tell people the rude comment is okay. How would Dias feel?", "result": [{ "system": "You liked a comment." }] },
+            { "id": "b", "text": "Scroll past.", "scores": {}, "feedback": "Scrolling past is easy, but Dias only sees the rude comments.", "result": [{ "system": "You scrolled away." }] },
+            { "id": "c", "text": "Write a kind comment about what you like.", "scores": { "kindness": 2, "compassion": 1 }, "feedback": "A kind comment can balance hurtful ones. That showed kindness.", "result": [{ "from": "me", "text": "I love the colours of the tree! keep drawing 🌿" }, { "from": "Dias", "text": "thank you!! 😊" }] },
+            { "id": "d", "text": "Report the comments and ask people to stop.", "scores": { "respect": 2, "caring": 1 }, "feedback": "Making the space safer showed respect.", "result": [{ "from": "me", "text": "be nice, it's his first drawing" }, { "system": "Comments reported. 1 comment was removed." }] }
+          ]
+        },
+        {
+          "type": "chat", "id": "d4",
+          "app": "Direct message", "title": "Madi", "members": "online",
+          "messages": [
+            { "from": "Madi", "text": "hey" },
+            { "from": "Madi", "text": "honestly I feel so alone lately. like nobody really gets me" }
+          ],
+          "prompt": "A friend sends you a message saying they feel alone. What would you do?",
+          "options": [
+            { "id": "a", "text": "Reply “same lol”.", "scores": {}, "feedback": "Madi shared something serious. How could you show you heard them?", "result": [{ "from": "me", "text": "same lol" }, { "from": "Madi", "text": "…yeah. nvm" }] },
+            { "id": "b", "text": "Call or meet Madi, and listen.", "scores": { "understanding": 2, "caring": 2, "compassion": 1 }, "feedback": "Making time to really listen showed understanding.", "result": [{ "from": "me", "text": "I'm here. can I call you? I want to listen" }, { "from": "Madi", "text": "yes. thank you 💛" }] },
+            { "id": "c", "text": "Send a ❤️ and change the topic.", "scores": { "kindness": 1 }, "feedback": "The heart is kind, but Madi might feel unheard.", "result": [{ "from": "me", "text": "❤️ did you see the new episode?" }, { "from": "Madi", "text": "no…" }] },
+            { "id": "d", "text": "Say you care, and suggest also talking to a trusted adult.", "scores": { "caring": 2, "compassion": 2 }, "feedback": "Caring and getting a trusted adult involved is a strong, safe choice.", "result": [{ "from": "me", "text": "I care about you. we can talk, and maybe also tell someone you trust, like a teacher?" }, { "from": "Madi", "text": "maybe… will you come with me?" }] }
+          ],
+          "note": "If a friend feels alone or sad for a long time, it is always okay to tell a trusted adult."
+        },
+        {
+          "type": "chat", "id": "d5",
+          "app": "Group chat", "title": "Science Project 🔬", "members": "18 members",
+          "messages": [
+            { "from": "Nurlan", "text": "hi everyone! I'm Nurlan, I'm new 😊" },
+            { "system": "Seen by 17" },
+            { "system": "No replies for 2 hours" }
+          ],
+          "prompt": "Everyone ignores a new student in an online group. What would you do?",
+          "options": [
+            { "id": "a", "text": "Do nothing.", "scores": {}, "feedback": "Being “seen by 17” with no replies can feel very lonely.", "result": [{ "system": "Nurlan left the group" }] },
+            { "id": "b", "text": "Reply “welcome!”", "scores": { "kindness": 2 }, "feedback": "A warm welcome showed kindness.", "result": [{ "from": "me", "text": "welcome Nurlan! 👋" }, { "from": "Nurlan", "text": "thanks!" }] },
+            { "id": "c", "text": "Welcome him and ask what he likes.", "scores": { "kindness": 1, "understanding": 1, "respect": 1 }, "feedback": "Being curious about Nurlan showed understanding.", "result": [{ "from": "me", "text": "welcome! what kind of science do you like?" }, { "from": "Nurlan", "text": "space!! 🚀" }] },
+            { "id": "d", "text": "Invite him into your project team.", "scores": { "caring": 2, "compassion": 1 }, "feedback": "Making room for Nurlan in your team showed caring.", "result": [{ "from": "me", "text": "Nurlan, want to join our team? we need one more" }, { "from": "Nurlan", "text": "yes!! thank you so much" }] }
+          ]
+        },
+        { "type": "thenNow", "book": "Colin is hidden away. Few people visit or talk to him, and he feels forgotten.", "today": "A classmate is removed from a group chat, and nobody says anything." }
+      ]
+    }
+  ]
+}

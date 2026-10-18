@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Research Dashboard · The Secret Garden</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/research.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script src="../js/config.js"></script>
+</head>
+<body>
+  <header class="r-head">
+    <div>
+      <p class="r-eyebrow">The Secret Garden: My Empathy Journey</p>
+      <h1>Research Dashboard</h1>
+      <p class="r-sub">Anonymous Before → Activities → After results. <span id="source" class="badge"></span></p>
+    </div>
+    <div class="r-actions">
+      <button class="r-btn" id="refresh">↻ Refresh</button>
+      <button class="r-btn" id="export-csv">⬇ CSV</button>
+      <button class="r-btn" id="export-json">⬇ JSON</button>
+      <label class="r-btn" for="import-json">⬆ Import JSON<input type="file" id="import-json" accept="application/json,.json" hidden></label>
+      <a class="r-btn r-btn-dark" href="../">Open the game</a>
+    </div>
+  </header>
+
+  <section class="r-filters" aria-label="Filters">
+    <label class="r-check"><input type="checkbox" id="f-sample"> Include sample data</label>
+    <label class="r-check"><input type="checkbox" id="f-demo"> Include Demo Mode runs</label>
+    <label class="r-select">Grade
+      <select id="f-grade"><option value="">All grades</option></select>
+    </label>
+    <span class="r-spacer"></span>
+    <button class="r-btn r-btn-sm" id="add-sample">+ Add 24 sample participants</button>
+    <button class="r-btn r-btn-sm" id="remove-sample">Remove sample data</button>
+    <button class="r-btn r-btn-sm r-danger" id="clear-local">Clear local data</button>
+  </section>
+
+  <main class="r-main">
+    <p id="empty" class="r-empty" hidden>No participants yet. Play the game (Full Journey) or add sample participants to preview the dashboard.</p>
+
+    <section class="r-tiles" id="tiles" aria-label="Key numbers"></section>
+
+    <section class="r-grid">
+      <article class="r-card">
+        <h2>Before vs After by value</h2>
+        <p class="r-note">Average score (%) in the Before and After quick choices. Participants who finished both.</p>
+        <div class="r-legend"><span><i style="background:#b07f12"></i>Before</span><span><i style="background:#2479a8"></i>After</span></div>
+        <div class="r-chart"><canvas id="c-beforeafter" aria-label="Grouped bar chart of Before and After averages per value" role="img"></canvas></div>
+      </article>
+      <article class="r-card">
+        <h2>Before / After profile</h2>
+        <p class="r-note">The same averages as a radar chart.</p>
+        <div class="r-legend"><span><i style="background:#b07f12"></i>Before</span><span><i style="background:#2479a8"></i>After</span></div>
+        <div class="r-chart"><canvas id="c-radar" aria-label="Radar chart of Before and After averages" role="img"></canvas></div>
+      </article>
+      <article class="r-card">
+        <h2>Empathy values during the journey</h2>
+        <p class="r-note">Average score (%) from the story missions and digital situations (the Empathy Pyramid).</p>
+        <div class="r-chart"><canvas id="c-values" aria-label="Bar chart of average journey score per value" role="img"></canvas></div>
+      </article>
+      <article class="r-card">
+        <h2>Mission completion</h2>
+        <p class="r-note">Share of participants who completed each mission.</p>
+        <div class="r-chart"><canvas id="c-completion" aria-label="Bar chart of mission completion rates" role="img"></canvas></div>
+      </article>
+    </section>
+
+    <section class="r-card r-wide">
+      <h2>Table view</h2>
+      <p class="r-note">All numbers from the charts above.</p>
+      <div class="r-table-wrap"><table class="r-table" id="t-values"></table></div>
+    </section>
+
+    <section class="r-card r-wide">
+      <h2>Most selected choices</h2>
+      <p class="r-note">For every question: the answer chosen most often.</p>
+      <div class="r-table-wrap"><table class="r-table" id="t-choices"></table></div>
+    </section>
+
+    <section class="r-card r-wide">
+      <h2>Participants</h2>
+      <p class="r-note">Anonymous IDs and nicknames only. No names, emails, phone numbers or addresses are collected.</p>
+      <div class="r-table-wrap"><table class="r-table" id="t-people"></table></div>
+    </section>
+
+    <p class="r-disclaimer">These results are based only on choices inside an interactive activity. They are not a psychological diagnosis or clinical assessment.</p>
+  </main>
+
+  <div id="r-tooltip" class="r-toast" role="status" hidden></div>
+  <script type="module" src="../js/research.js"></script>
+</body>
+</html>

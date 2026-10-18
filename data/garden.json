@@ -1,0 +1,69 @@
+{
+  "values": {
+    "respect": {
+      "name": "Respect", "plant": "Ivy", "color": "#4f7d32",
+      "description": "Thinking about other people's opinions, boundaries and rights.",
+      "growth": "Next time, try asking before you help. It shows you respect a person's choices."
+    },
+    "understanding": {
+      "name": "Understanding", "plant": "Fern", "color": "#2479a8",
+      "description": "Trying to understand another person's situation.",
+      "growth": "Try asking “How do you feel?” — and listen to the whole answer before you reply."
+    },
+    "kindness": {
+      "name": "Kindness", "plant": "Sunflower", "color": "#b07f12",
+      "description": "Choosing actions with good intentions.",
+      "growth": "Small actions count. A kind comment or a smile can change someone's day."
+    },
+    "caring": {
+      "name": "Caring", "plant": "Lavender", "color": "#6a5cb8",
+      "description": "Offering help or support when someone needs it.",
+      "growth": "Notice who might need support, and offer help in a practical way."
+    },
+    "compassion": {
+      "name": "Compassion", "plant": "Rose", "color": "#b8434f",
+      "description": "Understanding someone's situation and acting to help them.",
+      "growth": "When someone is hurt, try to feel with them — and then do something to help."
+    }
+  },
+  "locations": {
+    "gardenGate":    { "name": "Garden Gate",    "action": "Look at the Garden Gate" },
+    "oldTree":       { "name": "Old Tree",       "action": "Explore the Old Tree" },
+    "roseGarden":    { "name": "Rose Garden",    "action": "Explore the Rose Garden" },
+    "colinsWindow":  { "name": "Colin's Window", "action": "Visit Colin's Window" },
+    "fountain":      { "name": "Fountain",       "action": "Plant seeds by the Fountain" },
+    "hiddenBench":   { "name": "Hidden Bench",   "action": "Sit at the Hidden Bench" },
+    "digitalPortal": { "name": "Digital Portal", "action": "Approach the Digital Portal" },
+    "finalGarden":   { "name": "Final Garden",   "action": "Enter the Final Garden" }
+  },
+  "achievements": [
+    { "id": "first_seed",    "name": "First Seed",       "icon": "🌱", "text": "Complete your first mission." },
+    { "id": "good_listener", "name": "Good Listener",    "icon": "👂", "text": "Choose to listen and understand in Help Colin." },
+    { "id": "kind_gardener", "name": "Kind Gardener",    "icon": "🌻", "text": "Make five kind choices." },
+    { "id": "digital_helper","name": "Digital Helper",   "icon": "💬", "text": "Complete the Digital Garden." },
+    { "id": "green_thumb",   "name": "Green Thumb",      "icon": "🪴", "text": "Plant your first Empathy Seed." },
+    { "id": "curious",       "name": "Curious Explorer", "icon": "🪶", "text": "Find all hidden collectibles." },
+    { "id": "garden_keeper", "name": "Garden Keeper",    "icon": "🗝️", "text": "Complete the whole journey." }
+  ],
+  "collectibles": [
+    { "id": "key",     "name": "Old Key",      "icon": "🗝️", "text": "The rusty key the robin found. It had been buried for ten years." },
+    { "id": "feather", "name": "Robin Feather","icon": "🪶", "text": "A tiny red-brown feather. The robin was Mary's very first friend at the manor." },
+    { "id": "rose",    "name": "Wild Rose",    "icon": "🌹", "text": "A single rose that survived the long winter. Gardens wait patiently for someone to care." },
+    { "id": "page1",   "name": "Book Page I",  "icon": "📜", "text": "“Might I have a bit of earth?” — Mary asks Mr. Craven for a small piece of land to make things grow." },
+    { "id": "page2",   "name": "Book Page II", "icon": "📜", "text": "“It's wick!” — Dickon shows Mary that a grey branch is still alive inside. Things that look dead can still grow." },
+    { "id": "page3",   "name": "Book Page III","icon": "📜", "text": "“Where you tend a rose, my lad, a thistle cannot grow.” — When we grow good thoughts, there is less room for bad ones." }
+  ],
+  "plants": {
+    "rose":      { "name": "Rose",      "value": "compassion" },
+    "sunflower": { "name": "Sunflower", "value": "kindness" },
+    "lavender":  { "name": "Lavender",  "value": "caring" },
+    "fern":      { "name": "Fern",      "value": "understanding" },
+    "ivy":       { "name": "Ivy",       "value": "respect" }
+  },
+  "quotes": [
+    "Every garden has a story. Every choice reveals something about us.",
+    "Things that look grey can still be alive inside.",
+    "A garden grows when someone cares for it.",
+    "Listening is the first seed of understanding."
+  ]
+}

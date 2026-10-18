@@ -1,0 +1,95 @@
+/* =========================================================
+   Responsive layout: laptop → tablet → phone
+   Main demonstration mode is laptop/desktop.
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .pyr-panel { top: auto; bottom: 150px; transform: none; width: min(300px, calc(100% - 32px)); padding: 16px 18px; }
+  .pyr-card { width: min(300px, calc(100% - 32px)); }
+}
+
+@media (max-width: 900px) {
+  .digital-layout { grid-template-columns: 1fr; justify-items: center; gap: 14px; }
+  .phone { width: min(330px, 100%); height: min(420px, 52vh); }
+  .digital-side { width: min(520px, 100%); }
+  .plant-layout { grid-template-columns: 1fr; }
+  .plant-side { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  :root { --radius: 16px; }
+  .hud-mission { left: 12px; padding: 7px 12px; max-width: calc(100vw - 210px); }
+  .hud-title { font-size: 1.1rem; }
+  .hud-eyebrow { font-size: .6rem; }
+  .hud-actions { right: 12px; gap: 6px; }
+  .icon-btn { width: 40px; height: 40px; }
+  .hud-bottom { gap: 10px; padding: 8px 14px; width: calc(100% - 24px); justify-content: space-between; }
+  .journey-label { font-size: .8rem; }
+  .journey-dots { gap: 5px; }
+  .journey-dots i { width: 11px; height: 11px; }
+  .seeds { padding-left: 10px; font-size: .82rem; }
+  .seeds span { white-space: nowrap; }
+
+  .screen-center { padding: 78px 12px 84px; place-items: start center; }
+  .card { padding: 24px 20px 20px; }
+  .avatar-grid { gap: 8px; }
+  .avatar-option { padding: 8px 4px; font-size: .85rem; }
+
+  .story-wrap { bottom: 70px; width: calc(100% - 16px); max-height: calc(100% - 140px); overflow-y: auto; }
+  .story-panel { grid-template-columns: 1fr; gap: 10px; padding: 18px 18px 16px; }
+  .story-panel .portrait { width: 76px; height: 76px; float: left; margin: 0 12px 4px 0; }
+  .story-panel.has-portrait { display: block; }
+  .story-text.narration { font-size: 1.18rem; }
+  .phase-stepper { gap: 3px; }
+  .phase { padding: 3px 7px; font-size: .58rem; letter-spacing: .06em; }
+
+  .then-now { grid-template-columns: 1fr; }
+  .tn-arrow { transform: rotate(90deg); }
+
+  .emo-stage { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .emo-face { width: 110px; height: 110px; }
+  .emo-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .path-board { grid-template-columns: 1fr; }
+  .path-pile { flex-direction: row; flex-wrap: wrap; }
+  .path-pile .stone { flex: 1 1 40%; }
+
+  .plots { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+  .pin-dot { width: 38px; height: 38px; font-size: 1.05rem; }
+  .pin-name { font-size: .68rem; padding: 2px 7px; }
+
+  .achievements { top: 70px; right: 10px; left: 10px; align-items: flex-end; }
+  .achievement { min-width: 0; }
+
+  .pyr-panel { display: none; }
+  .pyr-panel.mobile-open { display: block; left: 12px; right: 12px; bottom: 150px; width: auto; }
+  .pyr-card { right: 12px; left: 12px; top: auto; bottom: 150px; transform: none; width: auto; max-height: 50vh; overflow: auto; }
+  .pyr-label { font-size: .78rem; padding: 5px 10px 5px 8px; }
+
+  .badge-card { grid-template-columns: 90px 1fr; padding: 16px 18px; gap: 14px; }
+  .badge-medal { width: 90px; height: 90px; }
+  .badge-card h3 { font-size: 1.4rem; }
+  .badge-wrap { bottom: 74px; }
+  .final-text { top: 9vh; }
+
+  .toasts { bottom: 78px; }
+  .caption { bottom: 130px; left: 12px; }
+  .digital-side { padding: 18px; }
+}
+
+@media (max-width: 420px) {
+  .seeds span { font-size: 0; }
+  .seeds b { font-size: 1rem; }
+  .landing-actions .btn-lg { padding: .8em 1.6em; }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .story-wrap { bottom: 64px; max-height: calc(100% - 120px); overflow-y: auto; }
+  .portrait { width: 84px; height: 84px; }
+  .hud-bottom { padding: 6px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin.is-available .pin-dot::after { animation: none; }
+}

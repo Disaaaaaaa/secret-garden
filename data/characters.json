@@ -1,0 +1,38 @@
+{
+  "mary": {
+    "name": "Mary Lennox",
+    "role": "The girl who finds the garden",
+    "note": "Mary comes from India after losing her parents. At first she is cross, lonely and “quite contrary”. Caring for the garden — and for her new friends — slowly changes her.",
+    "quote": "Might I have a bit of earth?"
+  },
+  "colin": {
+    "name": "Colin Craven",
+    "role": "The boy in the hidden room",
+    "note": "Colin is Mr. Craven's son. He has spent his life in bed, afraid he will never get well. When someone finally listens to him, he finds the courage to go outside.",
+    "quote": "I am going to live forever and ever and ever!"
+  },
+  "dickon": {
+    "name": "Dickon Sowerby",
+    "role": "Friend of every creature",
+    "note": "Dickon is Martha's brother. He lives on the moor and can calm any animal. He is patient and gentle, and he knows how to help living things grow.",
+    "quote": "It's wick! (It's alive!)"
+  },
+  "martha": {
+    "name": "Martha Sowerby",
+    "role": "The housemaid",
+    "note": "Martha is cheerful and kind. She is the first person at the manor who treats Mary as a friend.",
+    "quote": ""
+  },
+  "ben": {
+    "name": "Ben Weatherstaff",
+    "role": "The old gardener",
+    "note": "Ben is grumpy on the outside, but he loved Mrs. Craven's garden and secretly kept caring for it.",
+    "quote": ""
+  },
+  "narrator": {
+    "name": "The Story",
+    "role": "",
+    "note": "",
+    "quote": ""
+  }
+}

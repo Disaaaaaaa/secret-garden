@@ -1,0 +1,167 @@
+{
+  "info": "Before and After situations. Each pair (B1/A1, B2/A2 ...) measures the same values with a different situation. Scores: respect, understanding, kindness, caring, compassion.",
+  "before": [
+    {
+      "id": "B1", "pair": "1",
+      "text": "A new student joins your class and sits alone during lunch. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Continue talking with my friends.", "scores": {} },
+        { "id": "b", "text": "Invite the student to join us.", "scores": { "kindness": 2, "caring": 1 } },
+        { "id": "c", "text": "Wait until someone else talks to them.", "scores": {} },
+        { "id": "d", "text": "Ask whether they want company.", "scores": { "respect": 2, "understanding": 1, "kindness": 1 } }
+      ]
+    },
+    {
+      "id": "B2", "pair": "2",
+      "text": "Your friend gets a bad mark on a test and is quiet all day. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Say: “Don't worry, it's just one test.”", "scores": { "kindness": 1 } },
+        { "id": "b", "text": "Ask how they feel and really listen.", "scores": { "understanding": 2, "caring": 1 } },
+        { "id": "c", "text": "Leave them alone. It's not my business.", "scores": {} },
+        { "id": "d", "text": "Offer to study together next time.", "scores": { "caring": 2, "compassion": 1 } }
+      ]
+    },
+    {
+      "id": "B3", "pair": "3",
+      "text": "A classmate shares an idea in class, and some students laugh at it. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Laugh with the others.", "scores": {} },
+        { "id": "b", "text": "Say: “Let them finish. I want to hear the idea.”", "scores": { "respect": 2, "compassion": 1 } },
+        { "id": "c", "text": "Stay quiet.", "scores": {} },
+        { "id": "d", "text": "Later, tell them their idea was interesting.", "scores": { "kindness": 1, "understanding": 1 } }
+      ]
+    },
+    {
+      "id": "B4", "pair": "4",
+      "text": "Your little brother or sister breaks your favourite thing by accident and starts crying. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Shout at them.", "scores": {} },
+        { "id": "b", "text": "Tell them it's okay — accidents happen.", "scores": { "kindness": 2, "compassion": 1 } },
+        { "id": "c", "text": "Ask what happened before I react.", "scores": { "understanding": 2, "respect": 1 } },
+        { "id": "d", "text": "Ignore them for the rest of the day.", "scores": {} }
+      ]
+    },
+    {
+      "id": "B5", "pair": "5",
+      "text": "A classmate who uses a wheelchair can't reach a book on a high shelf. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Grab the book for them without asking.", "scores": { "kindness": 1 } },
+        { "id": "b", "text": "Ask if they would like some help.", "scores": { "respect": 2, "caring": 1 } },
+        { "id": "c", "text": "Walk past. They'll manage.", "scores": {} },
+        { "id": "d", "text": "Help, and suggest to the teacher that books go on lower shelves.", "scores": { "caring": 2, "compassion": 2 } }
+      ]
+    },
+    {
+      "id": "B6", "pair": "6",
+      "text": "Someone in your group project isn't doing their part because their family is going through a hard time. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Tell the teacher they are lazy.", "scores": {} },
+        { "id": "b", "text": "Try to understand and share the tasks differently.", "scores": { "understanding": 2, "compassion": 2 } },
+        { "id": "c", "text": "Do their part quietly, but feel annoyed.", "scores": { "caring": 1 } },
+        { "id": "d", "text": "Ask them privately how I can support them.", "scores": { "caring": 2, "respect": 1, "compassion": 1 } }
+      ]
+    },
+    {
+      "id": "B7", "pair": "7",
+      "text": "A friend tells you a secret and asks you not to share it. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Tell just one other close friend.", "scores": {} },
+        { "id": "b", "text": "Keep the secret.", "scores": { "respect": 2 } },
+        { "id": "c", "text": "Keep the secret and ask if they are okay.", "scores": { "respect": 2, "caring": 1, "understanding": 1 } },
+        { "id": "d", "text": "Make a joke about it later.", "scores": {} }
+      ]
+    },
+    {
+      "id": "B8", "pair": "8",
+      "text": "An elderly neighbour is carrying heavy shopping bags up the stairs. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Pretend I didn't see.", "scores": {} },
+        { "id": "b", "text": "Offer to carry a bag.", "scores": { "kindness": 2, "caring": 2 } },
+        { "id": "c", "text": "Smile and say hello.", "scores": { "respect": 1, "kindness": 1 } },
+        { "id": "d", "text": "Ask if they need help and walk up with them.", "scores": { "kindness": 1, "caring": 1, "compassion": 2 } }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "id": "A1", "pair": "1",
+      "text": "At summer camp, one child doesn't know anyone and stands alone by the fence. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Keep playing my game.", "scores": {} },
+        { "id": "b", "text": "Wave them over to join my group.", "scores": { "kindness": 2, "caring": 1 } },
+        { "id": "c", "text": "Hope a camp leader notices them.", "scores": {} },
+        { "id": "d", "text": "Go over, say hi, and ask if they'd like to join.", "scores": { "respect": 2, "understanding": 1, "kindness": 1 } }
+      ]
+    },
+    {
+      "id": "A2", "pair": "2",
+      "text": "Your teammate missed an easy goal, and your team lost. Now they sit alone. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Say: “Forget it, it's just a game.”", "scores": { "kindness": 1 } },
+        { "id": "b", "text": "Sit next to them and ask how they feel.", "scores": { "understanding": 2, "caring": 1 } },
+        { "id": "c", "text": "Go home with the others.", "scores": {} },
+        { "id": "d", "text": "Offer to practise together this week.", "scores": { "caring": 2, "compassion": 1 } }
+      ]
+    },
+    {
+      "id": "A3", "pair": "3",
+      "text": "A quiet student answers a question with an accent, and some students copy the way they talk. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Copy the accent too. It's funny.", "scores": {} },
+        { "id": "b", "text": "Say: “Stop it. Let them speak.”", "scores": { "respect": 2, "compassion": 1 } },
+        { "id": "c", "text": "Look away and say nothing.", "scores": {} },
+        { "id": "d", "text": "After class, tell them I liked their answer.", "scores": { "kindness": 1, "understanding": 1 } }
+      ]
+    },
+    {
+      "id": "A4", "pair": "4",
+      "text": "Your friend spills juice all over your new notebook by accident and looks scared. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Yell at them.", "scores": {} },
+        { "id": "b", "text": "Say it's fine and ask if they're okay.", "scores": { "kindness": 2, "compassion": 1 } },
+        { "id": "c", "text": "Ask what happened before getting upset.", "scores": { "understanding": 2, "respect": 1 } },
+        { "id": "d", "text": "Stop talking to them for a while.", "scores": {} }
+      ]
+    },
+    {
+      "id": "A5", "pair": "5",
+      "text": "A classmate with a broken arm is trying to open a heavy door. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Open it for them without a word.", "scores": { "kindness": 1 } },
+        { "id": "b", "text": "Ask: “Do you want me to get that?”", "scores": { "respect": 2, "caring": 1 } },
+        { "id": "c", "text": "Wait for them to manage on their own.", "scores": {} },
+        { "id": "d", "text": "Help, and offer to carry their bag this week.", "scores": { "caring": 2, "compassion": 2 } }
+      ]
+    },
+    {
+      "id": "A6", "pair": "6",
+      "text": "Your friend stopped answering messages after their pet died. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Decide they're being rude.", "scores": {} },
+        { "id": "b", "text": "Understand they're grieving and give them space, with a kind note.", "scores": { "understanding": 2, "compassion": 2 } },
+        { "id": "c", "text": "Keep sending funny videos as usual.", "scores": { "caring": 1 } },
+        { "id": "d", "text": "Write: “I'm here if you want to talk.”", "scores": { "caring": 2, "respect": 1, "compassion": 1 } }
+      ]
+    },
+    {
+      "id": "A7", "pair": "7",
+      "text": "A friend shows you a drawing they feel shy about and asks you not to show anyone. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Show the class — it's really good!", "scores": {} },
+        { "id": "b", "text": "Keep it private.", "scores": { "respect": 2 } },
+        { "id": "c", "text": "Keep it private and tell them it was brave to share.", "scores": { "respect": 2, "caring": 1, "understanding": 1 } },
+        { "id": "d", "text": "Take a photo of it to post later.", "scores": {} }
+      ]
+    },
+    {
+      "id": "A8", "pair": "8",
+      "text": "A little child is lost and crying in a shop. What would you most likely do?",
+      "options": [
+        { "id": "a", "text": "Walk away. Someone else will help.", "scores": {} },
+        { "id": "b", "text": "Stay with them and tell a shop worker.", "scores": { "kindness": 2, "caring": 2 } },
+        { "id": "c", "text": "Smile at them as I pass.", "scores": { "respect": 1, "kindness": 1 } },
+        { "id": "d", "text": "Kneel down, ask their name, and calmly help find their parent.", "scores": { "kindness": 1, "caring": 1, "compassion": 2 } }
+      ]
+    }
+  ]
+}
